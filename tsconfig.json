@@ -1,24 +1,50 @@
 {
   "compilerOptions": {
-    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
-    "target": "ES2022",
-    "lib": ["ES2023"],
+    /* Build Options */
+    "target": "ES2020",
     "module": "ESNext",
-    "skipLibCheck": true,
-
-    /* Bundler mode */
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "outDir": "./dist/",
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "incremental": true,
+    
+    /* Module Resolution */
     "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "isolatedModules": true,
-    "moduleDetection": "force",
-    "noEmit": true,
-
-    /* Linting */
+    "baseUrl": ".",
+    "paths": {
+      "*": ["./src/*"]
+    },
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": false,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    
+    /* Type Checking */
     "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
+    "noImplicitAny": true,
+    "strictNullChecks": false,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitReturns": true,
+    "noUnusedParameters": false,
+    "noUnusedLocals": false,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noImplicitOverride": true, 
+    
+    /* Advanced Options */
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "allowJs": true,
+    "checkJs": true,
+    "experimentalDecorators": true
   },
-  "include": ["vite.config.ts"]
+  "include": [
+    "./src/**/*",
+    "./vite.config.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
 }

@@ -1,8 +1,20 @@
-import { defineConfig } from 'vite'
+import { defineConfig } from "vite";
 
-// https://vite.dev/config/
 export default defineConfig({
-   server : {
-      port : 3000,
-   }
-})
+  define: {
+    DEV_MODE: false,
+  },
+  server: {
+    port: 8080,
+  },
+  build: {
+    outDir                : "dist",
+    assetsDir             : "",
+    minify                : true,
+    emptyOutDir           : false,
+    copyPublicDir         : false,
+    chunkSizeWarningLimit : 2 * 1024, // 2MB
+  },
+  publicDir : "dist",
+  plugins   : [],
+});
